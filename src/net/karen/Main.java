@@ -1,24 +1,26 @@
 package net.karen;
 
-import java.util.Scanner; // Library of read value of variable
-
 public class Main {
     public static void main(String[] args) {
-        /* Outputting with println and Inputting with Scanner */
+        /* Errors and how to get help with them */
 
-        /* Output a phrase */
-        System.out.println("Hello World!");
-        System.out.println("Hello Students!");
+        // Uncomment the lines to see examples of some of these errors!
 
-        // Declared and output a variable with phrase
-        int x = 10;
-        System.out.println(x);
-        System.out.println("Outputting some Value: " + x);
+        // java: cannot find symbol
+        // "Something is red inside the Code"
+        // ...\Main.java:11:28 (11 - line / 28 - character)
+        // Ex: Variable not declared
+        // System.out.println(a231);
 
-        // Read a value
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Type in your Username: ");
-        String input = scanner.next();
-        System.out.println("Your Username is: " + input);
+        // Exception in thread "main" java.lang.NullPointerException
+        // Something is null (doesn't have a value)
+        // Ex: Initialize something or call something in the wrong order
+        String s = null;
+        // System.out.println(s.length());
+
+        // Process finished with exit code 1
+        // "finished with non-zero exit value 1"
+        // NEVER only post this. This shows everyone you don't know programming or Java
+        // Usually there should be an error log/output or an "Exception"
     }
 }
