@@ -2,44 +2,33 @@ package net.karen;
 
 public class Main {
     public static void main(String[] args) {
-        /* Assignment Operators */
+        /* Boolean and Comparison Operators */
 
-        // Variables
-        int x = 100, y = 20; // Integers variables
+        // Boolean
+        boolean likesTheLectures = true;
+        boolean askedQuestions = false;
 
-        // Assignment Operator
+        System.out.println("You like these lectures " + likesTheLectures);
+        System.out.println("You have asked a Question in the Q&A " + askedQuestions);
 
-        // Addition
-        x = x + y; // Long version - 100 + 20 = 120
-        x += y;    // Sort version - 120 + 20 = 140
-        System.out.println(x);
+        // Comparison Operators
+        // Compare two values and return a boolean
+        // > >= == != < <=
 
-        // Subtraction
-        x -= y; // 140 - 20
-        System.out.println(x);
+        // Integer variable
+        int yourScore = 98;
 
-        // Multiplication
-        x *= y; // 120 * 20 = 2400
-        System.out.println(x);
+        // Bigger or equals (>=)
+        boolean passedClass = yourScore >= 50;
+        System.out.println("You passed: " + passedClass + " with " + yourScore + " points!");
 
-        // Division
-        x /= y; // 2400 / 20 = 120
-        System.out.println(x);
+        // Equals (==)
+        boolean hasPerfectScore = yourScore == 100;
+        System.out.println(hasPerfectScore);
 
-        // Remainder or modulo
-        x %= y; // 120 % 20 = 0
-        System.out.println(x);
+        // ! (Negate symbol) => 1. true -> false | 2. false -> true
+        boolean failedClass = !passedClass;
+        System.out.println(failedClass);
 
-        // Incrementing
-        // Plus
-        x = x + 1; // Long version  - 0 + 1 = 1
-        x += 1;    // Short version - 1 + 1 = 2
-        x++;       // Shortest version
-        System.out.println(x); // 2 + 1 = 3
-
-        // Decrementing
-        // Minus
-        x--; // Shortest version
-        System.out.println(x); // 3 - 1 = 2
     }
 }
