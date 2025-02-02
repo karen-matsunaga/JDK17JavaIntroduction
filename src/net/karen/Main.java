@@ -2,25 +2,33 @@ package net.karen;
 
 public class Main {
     public static void main(String[] args) {
-        /* Errors and how to get help with them */
+        /* Integers, Math and Arithmetic Operators */
 
-        // Uncomment the lines to see examples of some of these errors!
+        // Variables
+        int x = 100, y = 20, result; // Integers variables
 
-        // java: cannot find symbol
-        // "Something is red inside the Code"
-        // ...\Main.java:11:28 (11 - line / 28 - character)
-        // Ex: Variable not declared
-        // System.out.println(a231);
+        // Addition
+        result = x + y;
+        System.out.println(result);
 
-        // Exception in thread "main" java.lang.NullPointerException
-        // Something is null (doesn't have a value)
-        // Ex: Initialize something or call something in the wrong order
-        String s = null;
-        // System.out.println(s.length());
+        // Subtraction
+        result = x - y;
+        System.out.println(result);
 
-        // Process finished with exit code 1
-        // "finished with non-zero exit value 1"
-        // NEVER only post this. This shows everyone you don't know programming or Java
-        // Usually there should be an error log/output or an "Exception"
+        // Multiplication
+        result = x * y;
+        System.out.println(result);
+
+        // Division
+        result = x / y;
+        System.out.println(result);
+
+        // Remainder or modulo
+        result = 20 % 2;
+        System.out.println(result);
+
+        // Math methods -> Particular function
+        System.out.println(Math.max(x, y)); // Max method Ex: Interval between x (100) and y (20) = 100
+        System.out.println(Math.abs(-500)); // Absolute method Ex: |-500| = 500
     }
 }
