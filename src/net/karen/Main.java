@@ -2,33 +2,44 @@ package net.karen;
 
 public class Main {
     public static void main(String[] args) {
-        /* Integers, Math and Arithmetic Operators */
+        /* Assignment Operators */
 
         // Variables
-        int x = 100, y = 20, result; // Integers variables
+        int x = 100, y = 20; // Integers variables
+
+        // Assignment Operator
 
         // Addition
-        result = x + y;
-        System.out.println(result);
+        x = x + y; // Long version - 100 + 20 = 120
+        x += y;    // Sort version - 120 + 20 = 140
+        System.out.println(x);
 
         // Subtraction
-        result = x - y;
-        System.out.println(result);
+        x -= y; // 140 - 20
+        System.out.println(x);
 
         // Multiplication
-        result = x * y;
-        System.out.println(result);
+        x *= y; // 120 * 20 = 2400
+        System.out.println(x);
 
         // Division
-        result = x / y;
-        System.out.println(result);
+        x /= y; // 2400 / 20 = 120
+        System.out.println(x);
 
         // Remainder or modulo
-        result = 20 % 2;
-        System.out.println(result);
+        x %= y; // 120 % 20 = 0
+        System.out.println(x);
 
-        // Math methods -> Particular function
-        System.out.println(Math.max(x, y)); // Max method Ex: Interval between x (100) and y (20) = 100
-        System.out.println(Math.abs(-500)); // Absolute method Ex: |-500| = 500
+        // Incrementing
+        // Plus
+        x = x + 1; // Long version  - 0 + 1 = 1
+        x += 1;    // Short version - 1 + 1 = 2
+        x++;       // Shortest version
+        System.out.println(x); // 2 + 1 = 3
+
+        // Decrementing
+        // Minus
+        x--; // Shortest version
+        System.out.println(x); // 3 - 1 = 2
     }
 }
