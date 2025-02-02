@@ -2,33 +2,25 @@ package net.karen;
 
 public class Main {
     public static void main(String[] args) {
-        /* Boolean and Comparison Operators */
+        /* Boolean and Logical Operators */
 
-        // Boolean
-        boolean likesTheLectures = true;
-        boolean askedQuestions = false;
+        boolean watchedLectures = true;
+        boolean askedQuestion = false;
+        boolean finishedAssignments = true;
+        boolean gaveReview = false;
 
-        System.out.println("You like these lectures " + likesTheLectures);
-        System.out.println("You have asked a Question in the Q&A " + askedQuestions);
+        // Logical Operators
+        /* && (AND) ALL values true/false return TRUE/FALSE, one value false return FALSE;
+        || (OR) one value or ALL values true return TRUE, but ALL values false return FALSE;
+        ! (NOT) INVERTED value -> 1. true > false | 2. false > true.
+         */
 
-        // Comparison Operators
-        // Compare two values and return a boolean
-        // > >= == != < <=
+        boolean finishedCourse = watchedLectures && finishedAssignments;
+        boolean isFan = finishedCourse && gaveReview;
+        boolean learning = watchedLectures || askedQuestion;
 
-        // Integer variable
-        int yourScore = 98;
-
-        // Bigger or equals (>=)
-        boolean passedClass = yourScore >= 50;
-        System.out.println("You passed: " + passedClass + " with " + yourScore + " points!");
-
-        // Equals (==)
-        boolean hasPerfectScore = yourScore == 100;
-        System.out.println(hasPerfectScore);
-
-        // ! (Negate symbol) => 1. true -> false | 2. false -> true
-        boolean failedClass = !passedClass;
-        System.out.println(failedClass);
-
+        System.out.println(finishedCourse);
+        System.out.println(isFan);
+        System.out.println(learning);
     }
 }
