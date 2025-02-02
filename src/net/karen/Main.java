@@ -1,31 +1,24 @@
 package net.karen;
 
+import java.util.Scanner; // Library of read value of variable
+
 public class Main {
     public static void main(String[] args) {
-        /* HOW TO READ CODE / Java Syntax */
+        /* Outputting with println and Inputting with Scanner */
 
-        // Code is read from TOP to BOTTOM
+        /* Output a phrase */
+        System.out.println("Hello World!");
+        System.out.println("Hello Students!");
 
-        // This is a SINGLE line Comment
-
-        /*
-         *
-         * This is a
-         * MULTILINE Comment!
-         *
-         * */
-
-        // Declaring a Variable | Note that all lines end with a semicolon!
-        int i;
-
-        // Assigning a Variable
-        i = 30;
-
-        // Declaring and Assigning (Initializing)
+        // Declared and output a variable with phrase
         int x = 10;
+        System.out.println(x);
+        System.out.println("Outputting some Value: " + x);
 
-        // Access variables/method of Objects
-        String s = "Hello World";
-        s.length();
+        // Read a value
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type in your Username: ");
+        String input = scanner.next();
+        System.out.println("Your Username is: " + input);
     }
 }
