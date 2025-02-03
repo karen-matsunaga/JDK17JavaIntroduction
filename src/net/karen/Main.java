@@ -1,21 +1,42 @@
 package net.karen;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* Switch Statement */
+        int score = 0;
+        String question1, question2, question3;
 
-        /* USUALLY is used on INTEGER variables;
-           NEVER used on FLOAT variables;
-        */
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1. How is declared integer on Java? ");
+        question1 = scanner.next();
 
-        // Integer variable
-        int medalPlacement = 1; // 1 = GOLD MEDAL; 2 = SILVER MEDAL; 3 = BRONZE MEDAL;
-
-        switch(medalPlacement) {
-            case 1: System.out.println("GOLD MEDAL");   break;
-            case 2: System.out.println("SILVER MEDAL"); break;
-            case 3: System.out.println("BRONZE MEDAL"); break;
-            default: System.out.println("NO MEDAL");    break;
+        if (question1.equals("int")) {
+            System.out.println("Congratulations the answer is correct!");
+            score += 1;
+        } else {
+            System.out.println("The correct answer is int");
         }
+
+        System.out.println("2. Logical Operator represents bigger on Java?");
+        question2 = scanner.next();
+
+        if (question2.equals(">")) {
+            System.out.println("Congratulations the answer is correct!");
+            score += 1;
+        } else {
+            System.out.println("The correct answer is >");
+        }
+
+        System.out.println("3. What is method that represent PI?");
+        question3 = scanner.next();
+
+        if (question3.equals("3.14")) {
+            System.out.println("Congratulations the answer is correct!");
+            score += 1;
+        } else {
+            System.out.println("The correct answer is 3.14");
+        }
+
+        System.out.println("Your score is " + "[" + score + " / 3]");
     }
 }
