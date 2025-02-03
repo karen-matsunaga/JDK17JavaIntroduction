@@ -1,26 +1,42 @@
 package net.karen;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* Boolean and Logical Operators */
+        /* If and Else Statements */
 
-        boolean watchedLectures = true;
-        boolean askedQuestion = false;
-        boolean finishedAssignments = true;
-        boolean gaveReview = false;
+        // Integers variables
+        int exam1 = 65;
+        int exam2 = 51;
 
-        // Logical Operators
-        /* && (AND) ALL values true/false return TRUE/FALSE, one value false return FALSE;
-        || (OR) one value or ALL values true return TRUE, but ALL values false return FALSE;
-        ! (NOT) INVERTED value -> 1. true > false | 2. false > true.
-         */
+        // Read two variables
+        Scanner scanner = new Scanner(System.in);
 
-        boolean finishedCourse = watchedLectures && finishedAssignments;
-        boolean isFan = finishedCourse && gaveReview;
-        boolean learning = watchedLectures || askedQuestion;
+        // Exam1's variable
+        System.out.println("Results for Exam 1: ");
+        exam1 = scanner.nextInt();
 
-        System.out.println(finishedCourse);
-        System.out.println(isFan);
-        System.out.println(learning);
+        // Exam2's variable
+        System.out.println("Results for Exam 2: ");
+        exam2 = scanner.nextInt();
+
+        // Exam1 statement
+        if (exam1 >= 50) {
+            System.out.println("You have PASSED Exam 1");
+        } else {
+            System.out.println("You have FAILED Exam 1");
+        }
+
+        // Exam2 statement
+        if (exam2 >= 50) {
+            System.out.println("You have PASSED Exam 2");
+        } else {
+            System.out.println("You have FAILED Exam 2");
+        }
+
+        // Exam1 and Exam2 statement
+        if (exam1 >= 50 && exam2 >= 50) {
+            System.out.println("You have PASSED the Class");
+        }
     }
 }
