@@ -1,42 +1,21 @@
 package net.karen;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* If and Else Statements */
+        /* Switch Statement */
 
-        // Integers variables
-        int exam1 = 65;
-        int exam2 = 51;
+        /* USUALLY is used on INTEGER variables;
+           NEVER used on FLOAT variables;
+        */
 
-        // Read two variables
-        Scanner scanner = new Scanner(System.in);
+        // Integer variable
+        int medalPlacement = 1; // 1 = GOLD MEDAL; 2 = SILVER MEDAL; 3 = BRONZE MEDAL;
 
-        // Exam1's variable
-        System.out.println("Results for Exam 1: ");
-        exam1 = scanner.nextInt();
-
-        // Exam2's variable
-        System.out.println("Results for Exam 2: ");
-        exam2 = scanner.nextInt();
-
-        // Exam1 statement
-        if (exam1 >= 50) {
-            System.out.println("You have PASSED Exam 1");
-        } else {
-            System.out.println("You have FAILED Exam 1");
-        }
-
-        // Exam2 statement
-        if (exam2 >= 50) {
-            System.out.println("You have PASSED Exam 2");
-        } else {
-            System.out.println("You have FAILED Exam 2");
-        }
-
-        // Exam1 and Exam2 statement
-        if (exam1 >= 50 && exam2 >= 50) {
-            System.out.println("You have PASSED the Class");
+        switch(medalPlacement) {
+            case 1: System.out.println("GOLD MEDAL");   break;
+            case 2: System.out.println("SILVER MEDAL"); break;
+            case 3: System.out.println("BRONZE MEDAL"); break;
+            default: System.out.println("NO MEDAL");    break;
         }
     }
 }
