@@ -1,42 +1,40 @@
 package net.karen;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int score = 0;
-        String question1, question2, question3;
+        /* String and String Methods */
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("1. How is declared integer on Java? ");
-        question1 = scanner.next();
+        String sentence = "It's a wonderful Java Introduction!";
+        System.out.println(sentence);
+        System.out.println("Length is: " + sentence.length()); // Length
 
-        if (question1.equals("int")) {
-            System.out.println("Congratulations the answer is correct!");
-            score += 1;
-        } else {
-            System.out.println("The correct answer is int");
-        }
+        // Upper and Lower case
+        System.out.println("SHOUTING: " + sentence.toUpperCase()); // Upper
+        System.out.println("whispering: " + sentence.toLowerCase()); // Lower
+        System.out.println(sentence);
 
-        System.out.println("2. Logical Operator represents bigger on Java?");
-        question2 = scanner.next();
+        // indexOf -> first character in number
+        System.out.println("The word 'Java' is found at position: " + sentence.indexOf("Java"));
 
-        if (question2.equals(">")) {
-            System.out.println("Congratulations the answer is correct!");
-            score += 1;
-        } else {
-            System.out.println("The correct answer is >");
-        }
+        // Replace -> the word is replaced to other
+        System.out.println(sentence.replace("Java", "C#"));
 
-        System.out.println("3. What is method that represent PI?");
-        question3 = scanner.next();
+        // Start and End with
+        System.out.println(sentence.startsWith("I")); // Start
+        System.out.println(sentence.endsWith("A")); // End
 
-        if (question3.equals("3.14")) {
-            System.out.println("Congratulations the answer is correct!");
-            score += 1;
-        } else {
-            System.out.println("The correct answer is 3.14");
-        }
+        // Empty -> Phrase is empty of string
+        String s = "";
+        boolean empty = s.isEmpty();
+        System.out.println(empty);
 
-        System.out.println("Your score is " + "[" + score + " / 3]");
+        // Contains -> Phrase contains only the word specified
+        System.out.println(sentence.contains("Java"));
+
+        // charAt -> index number of CHARACTER
+        System.out.println(sentence.charAt(17));
+
+        // substring -> Show only BEGIN index and END index
+        System.out.println(sentence.substring(17));
     }
 }
