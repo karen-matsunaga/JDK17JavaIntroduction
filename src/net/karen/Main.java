@@ -2,39 +2,23 @@ package net.karen;
 
 public class Main {
     public static void main(String[] args) {
-        /* String and String Methods */
+        /* Casting (or converting data types between each other) */
 
-        String sentence = "It's a wonderful Java Introduction!";
-        System.out.println(sentence);
-        System.out.println("Length is: " + sentence.length()); // Length
+        int loan = 750;
+        float interestRate = 0.0525f;
 
-        // Upper and Lower case
-        System.out.println("SHOUTING: " + sentence.toUpperCase()); // Upper
-        System.out.println("whispering: " + sentence.toLowerCase()); // Lower
-        System.out.println(sentence);
+        /* implicit cast -> 750 transform automatically to float datatype
+           explicit cast -> (float) 750 the integer number is forced to transform into float */
+        float interest = loan * interestRate; // implicit cast
+        System.out.println(interest);
 
-        // indexOf -> first character in number
-        System.out.println("The word 'Java' is found at position: " + sentence.indexOf("Java"));
+        // Example using float cast
+        float interest1 = (float) loan * interestRate; // explicit cast
+        System.out.println(interest1);
 
-        // Replace -> the word is replaced to other
-        System.out.println(sentence.replace("Java", "C#"));
-
-        // Start and End with
-        System.out.println(sentence.startsWith("I")); // Start
-        System.out.println(sentence.endsWith("A")); // End
-
-        // Empty -> Phrase is empty of string
-        String s = "";
-        boolean empty = s.isEmpty();
-        System.out.println(empty);
-
-        // Contains -> Phrase contains only the word specified
-        System.out.println(sentence.contains("Java"));
-
-        // charAt -> index number of CHARACTER
-        System.out.println(sentence.charAt(17));
-
-        // substring -> Show only BEGIN index and END index
-        System.out.println(sentence.substring(17));
+        // Example using int cast
+        /* float = 0.0525f -> int = 0 */
+        int interest2 = loan * (int) interestRate; // explicit cast interestRate = int 0
+        System.out.println(interest2);
     }
 }
