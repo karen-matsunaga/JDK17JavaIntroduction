@@ -1,29 +1,10 @@
 package net.karen;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* Arrays */
+        /* Loops */
 
-        /* Question and Answer with String variable */
-
-        String question1 = "How many States does the USA have?";
-        String question2 = "What is the Capital of the United Kingdom?";
-        String question3 = "What is the chemical symbol for Iron?";
-
-        String answer1 = "50";
-        String answer2 = "London";
-        String answer3 = "Fe";
-
-        System.out.println(question1);
-        System.out.println(answer1);
-
-        System.out.println(question2);
-        System.out.println(answer2);
-
-        System.out.println(question3);
-        System.out.println(answer3);
-
-        /* Questions and Answers using Array */
         String[] questions = new String[3];
 
         questions[0] = "How many States does the USA have?";
@@ -36,18 +17,42 @@ public class Main {
         answers[1] = "London";
         answers[2] = "Fe";
 
-        System.out.println(questions[1]);
-        System.out.println(answers[1]);
+        /* For Loop
+           i = 0 -> first number
+           i < 100 -> the number is smaller than 100
+           i++ -> increment 1. Example: 0 < 100 (True) -> 0 + 1 = 1; -> Continue For loop
+                                        100 < 100 (False) -> Break For loop
+           While FALSE occur the for loop
+        */
+        for (int i = 0; i < 100; i++) {
+            System.out.println(i);
+        }
 
-        questions[0] = "How old is Ewan McGregor (in 2021)?";
+        /* For Loop
+           questions.length -> array size of questions
+           Access arrays with loop
+         */
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            System.out.println(answers[i]);
+        }
 
-        System.out.println(questions[0]);
-        System.out.println(answers[0]);
+        // Foreach -> Access each individual value of arrays | question[0], question[1], question[2] ...
+        for (String question : questions) {
+            System.out.println(question);
+        }
 
-        /* Array with length method */
-        System.out.println(questions.length);
+        // Scanner and While loop and Endless
+        Scanner scanner = new Scanner(System.in);
 
-        // ArrayIndexOutOfBoundsException (Uncomment line below) -> Index questions[3] not exist
-        // System.out.println(questions[3]);
+        /* While TRUE occur the while loop */
+        while (true) {
+            System.out.println("Do you want continue?");
+            if (scanner.next().equals("yes")) {
+               continue; // True -> Continue while loop (Endless)
+            } else {
+               break; // False -> Break while loop
+            }
+        }
     }
 }
