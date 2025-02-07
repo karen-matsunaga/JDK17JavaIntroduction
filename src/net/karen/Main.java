@@ -1,58 +1,59 @@
 package net.karen;
-import java.util.Scanner;
 
 public class Main {
+
+    // Method main
     public static void main(String[] args) {
-        /* Loops */
+        /* Methods */
 
-        String[] questions = new String[3];
+        String[] que = new String[3];
 
-        questions[0] = "How many States does the USA have?";
-        questions[1] = "What is the Capital of the United Kingdom?";
-        questions[2] = "What is the chemical symbol for Iron?";
+        que[0] = "How many States does the USA have?";
+        que[1] = "What is the Capital of the United Kingdom?";
+        que[2] = "What is the chemical symbol for Iron?";
 
-        String[] answers = new String[3];
+        String[] ans = new String[3];
 
-        answers[0] = "50";
-        answers[1] = "London";
-        answers[2] = "Fe";
+        ans[0] = "50";
+        ans[1] = "London";
+        ans[2] = "Fe";
 
-        /* For Loop
-           i = 0 -> first number
-           i < 100 -> the number is smaller than 100
-           i++ -> increment 1. Example: 0 < 100 (True) -> 0 + 1 = 1; -> Continue For loop
-                                        100 < 100 (False) -> Break For loop
-           While FALSE occur the for loop
-        */
-        for (int i = 0; i < 100; i++) {
-            System.out.println(i);
-        }
+        // Access custom methods on main method
 
-        /* For Loop
-           questions.length -> array size of questions
-           Access arrays with loop
-         */
-        for (int i = 0; i < questions.length; i++) {
-            System.out.println(questions[i]);
-            System.out.println(answers[i]);
-        }
+        // 1. outputQuestionsAndAnswers method
+        outputQuestionsAndAnswers(que, ans);
 
-        // Foreach -> Access each individual value of arrays | question[0], question[1], question[2] ...
-        for (String question : questions) {
-            System.out.println(question);
-        }
+        // 2. sum method
+        System.out.println(sum(10, 12));
+    }
 
-        // Scanner and While loop and Endless
-        Scanner scanner = new Scanner(System.in);
+    // 1. Method outputQuestionsAndAnswers -> Method type void
+    /*
+        public static -> access modifier
+        void -> type of method
+        outputQuestionsAndAnswers -> name method
+        String[] questions, String[] answers -> parameters
 
-        /* While TRUE occur the while loop */
-        while (true) {
-            System.out.println("Do you want continue?");
-            if (scanner.next().equals("yes")) {
-               continue; // True -> Continue while loop (Endless)
-            } else {
-               break; // False -> Break while loop
-            }
-        }
+        Each method signatures is unique
+    */
+    public static void outputQuestionsAndAnswers(String[] questions, String[] answers) {
+       for (int i = 0; i < questions.length; i++) {
+           System.out.println(questions[i]);
+           System.out.println(answers[i]);
+       }
+    }
+
+    // Error -> Method signatures is UNIQUE
+//    public static void outputQuestionsAndAnswers(String[] questions, String[] answers) {
+//    }
+
+    // No error -> Remove String[] answers parameter -> different method signature even if it uses name method equal
+    // different 1. number of parameters, 2. types of parameters or 3. return type
+//    public static void outputQuestionsAndAnswers(String[] questions) {
+//    }
+
+    // 2. Method sum -> Method type int
+    public static int sum(int x, int y) {
+        return x + y;
     }
 }
