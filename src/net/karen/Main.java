@@ -2,7 +2,7 @@ package net.karen;
 
 public class Main {
     public static void main(String[] args) {
-    /* Classes and Objects */
+    /* Access Modifiers */
 
         /* Used DEFAULT constructor */
         Dog doggo = new Dog(); // Remember SCANNER class -> DOG class
