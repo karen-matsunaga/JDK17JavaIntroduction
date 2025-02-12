@@ -11,13 +11,13 @@ public class Main {
         /* Adding Dogs with custom CLASS Dog */
         Dog bengie = new Dog("bengie.png", "Bengie", 7);
         // System.out.println(bengie.name); - Access Bengie's name
-        // System.out.println(bengie.age); - Access Bengie's age
+        // System.out.println(bengie.getAge()); - Access Bengie's age
 
         informationDog(bengie); // Access Bengie's information
 
         Dog gracie = new Dog("gracie.png", "Gracie", 5);
         // System.out.println(gracie.name); - Access Gracie's name
-        // System.out.println(gracie.age); - Access Gracie's age
+        // System.out.println(gracie.getAge()); - Access Gracie's age
 
         informationDog(gracie); // Access Gracie's information
 
@@ -25,13 +25,18 @@ public class Main {
         bengie.woof();
         gracie.woof();
 
-        // Modifying VALUE of Field
-        bengie.age = 10;
-        System.out.println("New value Bengie's age: " + bengie.age); // Return new VALUE of Field
+        // bengie.getAge() = 10; -> Modifying VALUE of Field DOESN'T WORK in this case!
+
+        /* Modifying dogToHumanYearMultiplier FIELD value
+                Dog.dogToHumanYearMultiplier = 10; -> Only static
+           OBS: If used final DOESN'T WORK!
+           System.out.println(Dog.dogToHumanYearMultiplier); // Access dogToHumanYearMultiplier FIELD
+        */
+        System.out.println(bengie.getAgeInHumanYears());
     }
 
     /* My Annotation */
     public static void informationDog(Dog dog) {
-        System.out.println("Name: " + dog.name + "\nAge: " + dog.age); // Custom METHOD to print on screen faster
+        System.out.println("Name: " + dog.name + "\nAge: " + dog.getAge()); // Custom METHOD to print on screen faster
     }
 }
