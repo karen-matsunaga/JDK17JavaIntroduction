@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-    /* Inheritance & Polymorphism */
+    /* Interfaces and Abstract */
         /* Adding Dogs with custom CLASS Dog */
         Dog bengie = new Dog("bengie.png", "Bengie", 7);
         Dog gracie = new Dog("gracie.png", "Gracie", 5);
@@ -14,10 +14,6 @@ public class Main {
 
         // Access Dog and Cat classes with custom method of super class Animal
         // Overridden methods called instead of the one by the actual super class
-//        whiskers.makeSound();
-//        bengie.makeSound();
-//        gracie.makeSound();
-
         informationAnimal(whiskers);
         informationAnimal(bengie);
         informationAnimal(gracie);
@@ -27,15 +23,21 @@ public class Main {
         animal.makeSound();
 
         List<Animal> animals = new ArrayList<>();
-//        animals.add(bengie);
-//        animals.add(gracie);
-//        animals.add(whiskers);
-
         animalAddList(animals, bengie);
         animalAddList(animals, gracie);
         animalAddList(animals, whiskers);
 
         animals.get(1).makeSound(); // Index of animals Super class List
+
+        // Animal is abstract -> Abstract class
+        // Cast or Objects never are created on Abstract class!
+        // Animal a = new Animal("x.png", "X", 10);
+
+        // Custom Interface
+        List<IPettable> pets = new ArrayList<>();
+        pets.add(bengie);
+        pets.add(whiskers);
+        pets.get(1).pet();
     }
 
     /* My Annotation */

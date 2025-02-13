@@ -1,7 +1,7 @@
 package net.karen;
 
 // Custom class
-public class Dog extends Animal {
+public class Dog extends Animal implements IPettable {
     public static final int dogToHumanYearMultiplier = 7;
 
     // Default CONSTRUCTOR Dog Class
@@ -17,5 +17,11 @@ public class Dog extends Animal {
     @Override
     public void makeSound() {
         System.out.println(this.name + " just woofed!");
+    }
+
+    // Custom Interface Pet method
+    @Override
+    public void pet() {
+        System.out.println(this.name + " was scratched behind the ears!");
     }
 }
