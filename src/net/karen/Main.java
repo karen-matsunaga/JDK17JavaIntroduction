@@ -1,51 +1,61 @@
 package net.karen;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-    /* Interfaces and Abstract */
-        /* Adding Dogs with custom CLASS Dog */
-        Dog bengie = new Dog("bengie.png", "Bengie", 7);
-        Dog gracie = new Dog("gracie.png", "Gracie", 5);
+        // Questions
+        Trivia que1 = new Question("Neymar is known in which sport?");
+        Trivia que2 = new Question("Lewis Hamilton was champion how many times in Formula 1?");
+        Trivia que3 = new Question("What is the capital of Japan?");
+        Trivia que4 = new Question("Who created the Java programming language?");
+        Trivia que5 = new Question("What does the acronym WWW mean?");
 
-        /* Adding Cats with custom CLASS Cat */
-        Cat whiskers = new Cat("whiskers.png", "Whiskers", 12);
+        List<Trivia> que = new ArrayList<>();
+        que.add(0, que1);
+        que.add(1, que2);
+        que.add(2, que3);
+        que.add(3, que4);
+        que.add(4, que5);
 
-        // Access Dog and Cat classes with custom method of super class Animal
-        // Overridden methods called instead of the one by the actual super class
-        informationAnimal(whiskers);
-        informationAnimal(bengie);
-        informationAnimal(gracie);
+        // Answers
+        Trivia ans1 = new Answer("Football");
+        Trivia ans2 = new Answer( "7");
+        Trivia ans3 = new Answer( "Tokyo");
+        Trivia ans4 = new Answer( "SunMicrosystems");
+        Trivia ans5 = new Answer( "WorldWideWeb");
 
-        // Polymorphism -> Super class Animal
-        Animal animal = new Dog("jenny.png", "Jenny", 15);
-        animal.makeSound();
+        List<Trivia> answer = new ArrayList<>();
+        answer.add(0, ans1);
+        answer.add(1, ans2);
+        answer.add(2, ans3);
+        answer.add(3, ans4);
+        answer.add(4, ans5);
 
-        List<Animal> animals = new ArrayList<>();
-        animalAddList(animals, bengie);
-        animalAddList(animals, gracie);
-        animalAddList(animals, whiskers);
+        Scanner scanner = new Scanner(System.in);
+        Trivia.Intro();
 
-        animals.get(1).makeSound(); // Index of animals Super class List
-
-        // Animal is abstract -> Abstract class
-        // Cast or Objects never are created on Abstract class!
-        // Animal a = new Animal("x.png", "X", 10);
-
-        // Custom Interface
-        List<IPettable> pets = new ArrayList<>();
-        pets.add(bengie);
-        pets.add(whiskers);
-        pets.get(1).pet();
-    }
-
-    /* My Annotation */
-    public static void informationAnimal(Animal animal) {
-        animal.makeSound(); // Custom METHOD to print on screen faster
-    }
-
-    public static void animalAddList(List<Animal> animals, Animal ani) {
-        animals.add(ani); // Custom METHOD to print on screen faster
+        // Questions and Answers
+        while (true) {
+            int score = 0;
+            String type = scanner.next();
+            if (type.equals("yes")) {
+                for (int i = 0; i < que.toArray().length; i++) {
+                    Question.question(que.get(i).name);
+                    String typeA = scanner.next();
+                    if (typeA.equals(answer.get(i).name)) {
+                        score++;
+                        Answer.correctAnswer(score);
+                    } else {
+                        Answer.wrongAnswer(answer.get(i).name, score);
+                    }
+                }
+            }
+            else {
+                break; // Break loop -> False
+            }
+            // Final Score and Continue game
+            Trivia.finalScore(score);
+            Trivia.endGame();
+        }
     }
 }
